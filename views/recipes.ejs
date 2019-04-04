@@ -1,0 +1,21 @@
+<% include partials/header %>
+
+<div class="outside__container">
+    <div class="header__text">
+            <h1>Our brain-dead recipes.</h1>
+            <p>I made these recipes myself. Since the only animal alive on earth with intelligence rivaling mine is a lobster, you can bet your ass these are easy as fuck to make. Take a look:</p>
+    </div>
+    <div class="header__advanced__content">
+            <p><a href="/recipes/new" style="text-decoration:none; color:#e9342c;">Create a new recipe!</a></p>
+    </div>
+    
+    <div class="recipe__container">
+        <% recipes.forEach(function(recipe) { %>
+            <img src="<%=recipe.image%>">
+            <p><%= recipe.title %></p>
+        <% }); %>
+    </div>
+    
+</div>
+
+<% include partials/footer %>

@@ -1,0 +1,743 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-family: montserrat;
+}
+nav {
+    background-color: #172334;
+    color: #e9342c;
+    padding: 10px 0px;
+}
+
+.navContainer {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+.nav_logo {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+.nav_logo > p > a {
+    text-decoration: none;
+    color: #e9342c;
+}
+.nav__links {
+    display: flex;
+    flex: 2;
+    justify-content: center;
+}
+.nav__user {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+.nav__user > a {
+    text-decoration: none;
+}
+.loginButton {
+    margin-right: 5px;
+}
+.form__container {
+    text-align: center;
+}
+.form__top {
+    margin: 20px;
+}
+.form__bottom {
+    margin-bottom: 20px;
+}
+.form__top > input {
+    width: 400px;
+    padding: 10px;
+    font-family: montserrat;
+}
+.form__bottom > input {
+    width: 400px;
+    padding: 10px;
+    font-family: montserrat;
+}
+.nav__links > ul {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+}
+.nav__links__link {
+    margin: 0px 30px;
+}
+.nav__links__link > a {
+    text-decoration: none;
+    color: #e9342c;
+    transition: all 0.2s;
+}
+.nav__links__link > a:hover {
+    color: white;
+    text-decoration: underline;
+}
+.nav__brand {
+    font-weight: 700;
+    font-size: 20px;
+}
+.nav__user > a {
+    background: #e9342c;
+    color: white;
+    font-weight: 700;
+    border: 1px solid #e9342c;
+    border-radius: 4px;
+    padding: 7px 30px;
+    transition: all 0.2s;
+}
+.nav__user > a:hover {
+    color: white;
+    background: #8bc058;
+    border: 1px solid #8bc058;
+    cursor: pointer;
+}
+
+/* flashes */
+
+.successFlashContainer {
+    text-align: center;
+}
+
+.errorFlashContainer {
+    text-align: center;
+}
+
+.fa {
+    margin-right: 10px;
+}
+footer {
+    padding: 5px 0px;
+    color: #e9342c;
+    margin: 0;
+    background: #172334;
+}
+footer > p {
+    margin-left: 35px;
+}
+.outside__container {
+    padding: 36px 0px;
+    background: url(https://i.imgur.com/YeDdZd4.jpg);
+    background-position: -560px -550px;
+    background-size: auto;
+}
+.header__text {
+    margin: 0 auto;
+    width: 650px;
+    text-align: center;
+    color: #2d303c;
+}
+.header__text > h1 {
+    font-size: 50px;
+}
+.header__text > p {
+    line-height: 30px
+}
+.header__advanced__content {
+    margin: 0 auto;
+    padding-top: 22px;
+    width: 800px;
+    text-align: center;
+    color: #2d303c;
+}
+.header__advanced__content > p {
+    font-size: 17px;
+    font-weight: 500;
+}
+.input__box {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 680px;
+    height: 330px;
+    background: white;
+    border-radius: 9px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+}
+.input__box__diets {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    height: 30%;
+    padding: 15px;
+}
+.input__box__inputs {
+    height: 70%;
+    width: 70%;
+    margin: 0 auto;
+}
+.diet {
+    border-radius: 12px;
+    height: 100%;
+}
+.diet > img {
+    margin-top: 15px;
+}
+.diet__name {
+    margin: 0;
+    font-size: 13px;
+    color: #007bff;
+}
+.active_diet {
+    background: #007bff;
+}
+.active_diet > p {
+    color: white;
+}
+.calorie__input {
+    display: flex;
+    align-items: center;
+}
+.calorie__input__text {
+    flex: 1;
+}
+.calorie__input__input {
+    flex: 1;
+    height: 35px;
+    border: 1px solid #D0D0D0;
+    border-radius: 5px;
+    font-family: montserrat;
+    padding: 0px 8px;
+}
+.meal__input {
+    display: flex;
+    align-items: center;
+}
+.meal__input__text {
+    flex: 1;
+}
+.meal__input__input {
+    height: 35px;
+    flex: 1;
+    border: 1px solid #D0D0D0;
+    border-radius: 5px;
+    font-family: montserrat;
+    padding: 0px 8px;
+}
+.meal__form__button {
+    margin-top: 25px;
+    border: none;
+    outline: none;
+    background: #e9342c;
+    color: white;
+    font-family: montserrat;
+    padding: 15px 45px;
+    font-size: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+    transition: all 0.2s;
+}
+.meal__form__button:hover {
+    background: #b61a13;
+}
+.cursor {
+    cursor: pointer;
+}
+.image__container {
+    display: flex;
+    justify-content: center;
+}
+.button__image {
+    margin-top: -40px;
+    text-align: center;
+    background: url(https://i.imgur.com/cJQZTmf.png);
+    background-repeat: no-repeat;
+    height: 250px;
+    width: 670px;
+}
+.check {
+    display:none;
+}
+.redoRecipes {
+    padding-bottom: 40px;
+}
+.calorieCount {
+    display: flex;
+}
+.calorieCount > p {
+    text-align: left;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+    margin: 0;
+    flex: 1;
+}
+.calorieCount > i {
+    border-bottom: 1px solid black;
+    margin: 0;
+    cursor: pointer;
+}
+.food__grid {
+    width: 650px;
+    margin: 0 auto;
+}
+.food__grid__items {
+    text-align: left;
+}
+.food__breakfast {
+    margin-top: 20px;
+}
+.food__breakfast, .food__lunch, .food__dinner {
+    background: #fff;
+    border-radius: 9px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+.meal__name {
+    margin: 0;
+    font-size: 20px;
+}
+.meal__calories {
+    margin-top: 5px;
+    font-size: 15px;
+    margin-bottom: 17px;
+}
+.food__grid__item {
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    display: flex;
+    transition: all 0.5s;
+    padding: 10px 10px;
+}
+.food__grid__item:hover {
+    border: 1px solid #e9342c;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+}
+.food__item__info {
+    margin-left: 10px;
+    margin-top: 3px;
+    text-align: left;
+}
+.food__item__info > p {
+    margin: 3px 0;
+}
+.food__image {
+    width: 70px;
+    height: 60px;
+    border-radius: 10px;
+}
+.food__info {
+    font-size: 13px;
+    padding-top: 4px;
+}
+.tooltip {
+    position: relative;
+}
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 180px;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  padding: 0 20px;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  top: -80px;
+  left: 105%; 
+}
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+.tooltip__name {
+    font-size: 14px;
+}
+.cook__time {
+    font-size: 10px;
+    padding: 0;
+    margin-top: -8px;
+}
+.tooltip__nutrition {
+    font-size: 12px;
+    padding: 0;
+    margin-top: 0px;
+}
+.tooltip__nutrition__list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: -5px;
+    font-size: 12px;
+}
+.tooltip__nutrition__list__item > span {
+    color: orange;
+}
+.tooltip__ingredient__list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: -5px;
+    font-size: 12px;
+}
+.savePlan {
+    margin-top: 25px;
+    margin-right: 15px;
+    border: none;
+    outline: none;
+    background: #e9342c;
+    color: white;
+    font-family: montserrat;
+    padding: 15px 45px;
+    font-size: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+    transition: all 0.2s;
+}
+.savePlan:hover {
+    background: #b61a13;
+}
+.printButton {
+    margin-top: 25px;
+    border: none;
+    outline: none;
+    background: #e9342c;
+    color: white;
+    font-family: montserrat;
+    padding: 15px 45px;
+    font-size: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+    transition: all 0.2s;
+}
+.printButton:hover {
+    background: #b61a13;
+}
+.print {
+    display: none;
+}
+@media print {
+    .non_print {
+        display: none;
+    }
+    .print {
+        display: block;
+    }
+}
+.fa-carrot {
+    color: #e9342c;
+}
+.nav_logo_print > p > a {
+    text-decoration: none;
+    color: #e9342c;
+    font-size: 30px;
+}
+.food__grid__items__print {
+    text-align: left;
+}
+.food__breakfast__print {
+    margin-top: 20px;
+}
+.food__breakfast__print, .food__lunch__print, .food__dinner__print {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+.food__item__ingredients {
+    flex: 1;
+    width: 100%;
+}
+.print__ingredient__list {
+    list-style-type: none;
+}
+.print__heading {
+    font-weight: 700;
+}
+.myBtn {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+.btnLabel {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+.myBtn > i{
+    margin-left: auto;
+    color: #8bc058;
+    cursor: pointer;
+}
+
+
+
+
+/* The Modal (background) */
+.modalBreakfast, .modalLunch, .modalDinner, .modalSave {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 70px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 60%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border-radius: 10px;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.closeBreakfast, .closeLunch, .closeDinner, .closeSave {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closeBreakfast:hover,
+.closeBreakfast:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.closeLunch:hover,
+.closeLunch:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.closeDinner:hover,
+.closeDinner:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.closeSave:hover,
+.closeSave:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+.modal-header-flex {
+    display: flex;
+}
+.modal-header-information {
+    margin-top: 15px;
+}
+.modal-header-information > p {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.modal-body {
+    padding: 2px 16px; 
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.modal__ingredients {
+    text-align: left;
+    padding-left: 110px;
+}
+.modal__nutrition {
+    text-align: left;
+    padding-left: 140px;
+    height: 70%;
+    display: flex;
+    align-items: center;
+}
+.modal-body-ingredients {
+    flex: 1 50%;
+    margin-left: 30px;
+    text-align: center;
+}
+.modal-body-ingredients > p {
+    font-weight: 700;
+    font-size: 20px;
+}
+.modal-body-nutrition > p {
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 40px;
+}
+.modal-body-nutrition {
+    flex: 1 50%;
+    margin-right: 150px;
+    text-align: center;
+}
+.modal__ingredient__list {
+    list-style-type: none;
+    padding: 0;
+}
+.modal__nutrition__list {
+    list-style-type: none;
+    padding: 0;
+}
+.modal__instructions {
+    width: 90%;
+    margin: 0 auto;
+}
+.modal__instructions__header {
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+}
+.modal__instructions__instructions {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+  border-radius: 0 0 10px 10px;
+}
+.modal__ingredient__list__container {
+    transform: scale(0.8, 0.8);
+  -ms-transform: scale(0.8, 0.8); /* IE 9 */
+  -webkit-transform: scale(0.8, 0.8); /* Safari and Chrome */
+  -o-transform: scale(0.8, 0.8); /* Opera */
+  -moz-transform: scale(0.8, 0.8); /* Firefox */
+  margin-top: -23px;
+  margin-bottom: -30px;
+}
+
+/*bottom buttons*/
+.bottomButtons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.amazonButton {
+    margin-top: 25px;
+    margin-right: 20px;
+    border: 1px solid;
+    border-color: #690 #466900 #3d5c00;
+    outline: none;
+    background: linear-gradient(to bottom,#cada8a,#9c3);
+    color: black;
+    font-family: "Lato",Arial,sans-serif;
+    padding: 15px 45px;
+    font-size: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+    transition: all 0.2s;
+}
+.amazonButton:hover {
+    background:-moz-linear-gradient(to bottom,#bdcf76,#8fbe30);
+    background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#bdcf76),color-stop(100%,#8fbe30));
+    background:-webkit-linear-gradient(top,#bdcf76,#8fbe30);background:-o-linear-gradient(to bottom,#bdcf76,#8fbe30);
+    background:-ms-linear-gradient(to bottom,#bdcf76,#8fbe30);background:linear-gradient(to bottom,#bdcf76,#8fbe30);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bdcf76', endColorstr='#8fbe30', GradientType=0);
+}
+.refreshContainer {
+    flex: 1 90%;
+    text-align: right;
+    align-items: center;
+}
+.refreshContainer > i {
+    cursor: pointer;
+}
+.successFlash {
+    background: #8bc058;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.errorFlash {
+    background: red;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.saveInput {
+    height: 35px;
+    width: 45%;
+    border: 1px solid #D0D0D0;
+    border-radius: 5px;
+    font-family: montserrat;
+    padding: 0px 8px;
+}
+.savePlanModal {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border: none;
+    outline: none;
+    background: #e9342c;
+    color: white;
+    font-family: montserrat;
+    padding: 15px 45px;
+    font-size: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+    transition: all 0.2s;
+}
+.savePlanModal:hover {
+    background: #b61a13;
+}
+.modalSave {
+    padding-top:150px;
+}
+.modal-content-save {
+    margin-top:50px;
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border-radius: 10px;
+}

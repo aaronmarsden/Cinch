@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Cinch</title>
+    <link rel="stylesheet" href="/newstyles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,900" rel="stylesheet">
+    <link href="/sequence-theme.basic.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+</head>
+
+<body>
+    <form action="/createuser" method="POST">
+        <div id="sequence">
+            <ul class="seq-canvas">
+
+                <li class="step1">
+                <div class="content">
+                    <h2 class="penis" data-seq>Welcome to Cinch.</h2>
+                    <h3 data-seq>Why don't you start by telling us a bit about yourself? <br/> We won't sell your data -- promise.</h3>
+                </div>
+                </li>
+
+                <li class="step2">
+                <div class="content">
+                    <h2 data-seq>Let's start with some basic info:</h2>
+                    <h3 id="onboardingName" data-seq>What's your name?</h3>
+                    <div class="onboardingNameDiv">
+                        <input data-seq id="onboardingNameInput" type="text" name="firstName" placeholder="name"> 
+                    </div>
+                    <h3 id="onboardingDietType" data-seq>What's your preferred diet?</h3>
+                    <div class="diet__container__onboarding">
+                        <label for="anything">
+                        <div class="diet active_diet">
+                            <input class="check" type="radio" id="anything" name="food" value="anything" checked="checked">
+                            <img src="/icons/watercolor/sandwich.png" class="diet__image" width="58px" height="39px">
+                            <p class="diet__name">Anything</p>
+                        </div>
+                        </label>
+                        <label class="paleo">
+                        <div class="diet">
+                            <input class="check paleoCheck" type="radio" id="paleo" name="food" value="paleo">
+                            <img src="/icons/watercolor/meat.png" class="diet__image" width="47px" height="40px">
+                            <p class="diet__name">Paleo</p>
+                        </div>
+                        </label>
+                        <label class="vegetarian">
+                        <div class="diet">
+                            <input class="check" type="radio" id="vegetarian" name="food" value="vegetarian">
+                            <img src="/icons/watercolor/vegetable.png" class="diet__image" width="40px" height="48px">
+                            <p class="diet__name vegetarian__name">Vegetarian</p>
+                        </div>
+                        </label>
+                        <label for="vegan">
+                        <div class="diet">
+                            <input class="check" type="radio" id="vegan" name="food" value="vegan">
+                            <img src="/icons/watercolor/cabbage.png" class="diet__image" width="59px" height="48px">
+                            <p class="diet__name vegan__name">Vegan</p>
+                        </div>
+                        </label>
+                        <label for="ketogenic">
+                        <div class="diet">
+                            <input class="check ketoCheck" type="radio" id="ketogenic" name="food" value="ketogenic">
+                            <img src="/icons/watercolor/no wheat.png" class="diet__image keto__image" width="31px" height="59px">
+                            <p class="diet__name keto__name">Keto</p>
+                        </div>
+                        </label>
+                        <label for="mediterranean">
+                        <div class="diet">
+                            <input class="check" type="radio" id="mediterranean" name="food" value="mediterranean">
+                            <img src="/icons/watercolor/berry.png" class="diet__image" width="58px" height="52px">
+                            <p class="diet__name med__name">Mediterranean</p>
+                        </div>
+                        </label>
+                    </div>
+                </div>
+                </li>
+
+                <li class="step3">
+                <div class="content">
+                    <h2 data-seq>We don't want to kill you.</h2>
+                    <h3 id="allergicText" data-seq>...so could you tell us what you're allergic to?</h3>
+                    <div class="allergie__container">
+                        <label for="gluten">
+                            <div class="allergie__box">
+                                <input class="allergie__check" type="checkbox" id="gluten" name="allergie" value="gluten">
+                                <p class="allergie__name">Gluten</p>
+                            </div>
+                        </label>
+                        <label for="peanut">
+                            <div class="allergie__box">
+                                <input class="allergie__check" type="checkbox" id="peanut" name="allergie" value="peanut">
+                                <p class="allergie__name">Peanut</p>
+                            </div>
+                        </label>
+                        <label for="eggs">
+                            <div class="allergie__box">
+                                <input class="allergie__check" type="checkbox" id="eggs" name="allergie" value="eggs">
+                                <p class="allergie__name">Eggs</p>
+                            </div>
+                        </label>
+                        <label for="fish">
+                            <div class="allergie__box">
+                                <input class="allergie__check" type="checkbox" id="fish" name="allergie" value="fish">
+                                <p class="allergie__name">Fish</p>
+                            </div>
+                        </label>
+                        <label for="tree nuts">
+                            <div class="allergie__box">
+                                <input class="allergie__check" type="checkbox" id="tree nuts" name="allergie" value="tree nuts">
+                                <p class="allergie__name">Tree Nuts</p>
+                            </div>
+                        </label>
+                        <label for="dairy">
+                            <div class="allergie__box">
+                                <input class="allergie__check" type="checkbox" id="dairy" name="allergie" value="dairy">
+                                <p class="allergie__name">Dairy</p>
+                            </div>
+                        </label>
+                        <label for="soy">
+                            <div class="allergie__box">
+                                <input class="allergie__check" type="checkbox" id="soy" name="allergie" value="soy">
+                                <p class="allergie__name">Soy</p>
+                            </div>
+                        </label>
+                        <label for="shellfish">
+                            <div class="allergie__box">
+                                <input class="allergie__check" type="checkbox" id="shellfish" name="allergie" value="shellfish">
+                                <p class="allergie__name">Shellfish</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                </li>
+
+                <li class="step4">
+                    <div class="content">
+                        <h2 class="penis" data-seq>Last, lets make sure you stay healthy.</h2>
+                        <div class="basalCalculatorContainer">
+                        <div class="basalInputs">
+                            <div class="basalInputContainer">
+                                <p class="basalP">Age</p>
+                                <input class="basalInput basalInputAge" type="number" name="age" value="25">
+                            </div>
+                            <div class="basalInputContainer">
+                                <p class="basalP">Height</p>
+                                <select class="basalInputSel basalInputHeight" name="height">
+                                    <option value="122">4' 0"</option>
+                                    <option value="124">4' 1"</option>
+                                    <option value="127">4' 2"</option>
+                                    <option value="130">4' 3"</option>
+                                    <option value="132">4' 4"</option>
+                                    <option value="135">4' 5"</option>
+                                    <option value="137">4' 6"</option>
+                                    <option value="140">4' 7"</option>
+                                    <option value="142">4' 8"</option>
+                                    <option value="145">4' 9"</option>
+                                    <option value="147">4' 10"</option>
+                                    <option value="150">4' 11"</option>
+                                    <option value="152">5' 0"</option>
+                                    <option value="155">5' 1"</option>
+                                    <option value="157">5' 2"</option>
+                                    <option value="160">5' 3"</option>
+                                    <option value="163">5' 4"</option>
+                                    <option value="165">5' 5"</option>
+                                    <option value="168">5' 6"</option>
+                                    <option value="170">5' 7"</option>
+                                    <option value="173" selected>5' 8"</option>
+                                    <option value="175">5' 9"</option>
+                                    <option value="178">5' 10"</option>
+                                    <option value="180">5' 11"</option>
+                                    <option value="183">6' 0"</option>
+                                    <option value="185">6' 1"</option>
+                                    <option value="188">6' 2"</option>
+                                    <option value="191">6' 3"</option>
+                                    <option value="193">6' 4"</option>
+                                    <option value="196">6' 5"</option>
+                                    <option value="198">6' 6"</option>
+                                    <option value="201">6' 7"</option>
+                                    <option value="203">6' 8"</option>
+                                    <option value="206">6' 9"</option>
+                                    <option value="208">6' 10"</option>
+                                    <option value="211">6' 11"</option>
+                                </select>
+                            </div>
+                            <div class="basalInputContainer">
+                                <p class="basalP">Gender</p>
+                                <select class="basalInputSel basalInputGender" name="gender">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                            <div class="basalInputContainer">
+                                <p class="basalP">Weight (lbs)</p>
+                                <input class="basalInput basalInputWeight" type="number" name="weight" value="140">
+                            </div>
+                            <div class="basalInputContainer">
+                                <p class="basalP">Exercise</p>
+                                <select class="basalInputSel basalInputExercise" name="exercise">
+                                    <option value="1.2">Sedentary (no exercise)</option>
+                                    <option value="1.375">Lightly active (1-3 days/week)</option>
+                                    <option value="1.55">Moderately active (3-5 days/week)</option>
+                                    <option value="1.725">Very active (6-7 days/week)</option>
+                                    <option value="1.9">Extra active (2x training)</option>
+                                </select>
+                            </div>
+                            <div class="basalInputContainer">
+                                <p class="basalP">Goal</p>
+                                <select class="basalInputSel basalInputGoal" name="goal">
+                                    <option value="maintain">Maintain my weight</option>
+                                    <option value="lose1">Lost weight steadily</option>
+                                    <option value="lose2">Lose weight quickly</option>
+                                    <option value="gain1">Gain weight steadily</option>
+                                    <option value="gain2">Gain weight quickly</option>
+                                </select>
+                            </div>
+                        </div>
+                            <hr class="bmrHR">
+                            <div class="basalCalcSection">
+                                <div class="basalCalorieSection">
+                                    <h3>Calories:</h3>
+                                    <h3 id="basalCalorieH3" style="margin-top: 10px;"><span class="basalCalorieSpan"></span></h3>
+                                </div>
+                                <div class="basalMacroSection">
+                                    <div class="basalCarb">
+                                        <p style="font-weight: 700;">Carbs</p>
+                                        <p><span class="carbPercentSpan"></span></p>
+                                        <p><span class="carbCalSpan"></span></p>
+                                        <p><span class="carbGramSpan"></span></p>
+                                    </div>
+                                    <div class="basalProtein">
+                                        <p style="font-weight: 700;">Protein</p>
+                                        <p><span class="proteinPercentSpan"></span></p>
+                                        <p><span class="proteinCalSpan"></span></p>
+                                        <p><span class="proteinGramSpan"></span></p>
+                                    </div>
+                                    <div class="basalFat">
+                                        <p style="font-weight: 700;">Fat</p>
+                                        <p><span class="fatPercentSpan"></span></p>
+                                        <p><span class="fatCalSpan"></span></p>
+                                        <p><span class="fatGramSpan"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="calculateBMRBtn" type="button">Calculate</button>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        
+        <div id="onboarding__buttons">
+            <button type="button" id="pp" class="seq-prev buttonHide" data-seq>Previous</button>
+            <button type="button" class="seq-next" data-seq>Next</button>
+            <button type="submit" class="seq-finish buttonHide">Finish</button>
+        </div>
+    </form>
+</body>
+
+
+<script src="/js/imagesloaded.pkgd.min.js"></script>
+<script src="/js/hammer.min.js"></script>
+<script src="/js/sequence.min.js"></script>
+<script src="/js/sequence-theme.basic.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="/js/home.js"></script>
+
+</html>

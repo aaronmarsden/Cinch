@@ -1,0 +1,536 @@
+<% include partials/headertwo %>
+
+<header class="profile__container">
+    <div class="meal__plan__box" style="background-color: <%=plan.backgroundColor%>">
+        <div class="meal__plan__info">
+            <div class="meal__plan__image">
+                <img src="/icons/watercolor/tomato.png" width="59px" height="72px">
+            </div>
+            <div class="meal__plan__details">
+                <div class="meal__plan__name">
+                    <p><%=plan.name%></p>
+                </div>
+                <p class="plan__info__description"><%=plan.description%></p>
+            </div>
+        </div>
+        <div class="meal__plan__creator">
+            <p>By: <%=plan.creator%></p>
+        </div>
+    </div>
+</header>
+
+<section class="plan__information">
+  <div class="plan__information__meal">
+    <div class="food__breakfast">
+        <h4 class="meal__name">Breakfast</h4>
+        <p class="meal__calories"><span class="breakfastCalSpan">660</span> Calories</p>
+        <div class="breakfast__items__container">
+            <% plan.plan[0].forEach(function(breakfast) { %>
+                <div class="food__grid__item tooltip">
+
+                    <div class="tooltiptext">
+                        <p class="tooltip__name"><%=breakfast.name%></p>
+                        <p class="cook__time">Cook time: <%=breakfast.time_to_make%></p>
+                        <hr>
+                        <p class="tooltip__nutrition">Nutrition info: </p>
+                        <ul class="tooltip__nutrition__list">
+                            <li class="tooltip__nutrition__list__item item1"><span>Calories:</span> <span class="currentCal"><%=breakfast.nutrition.calories%></span></li>
+                            <li class="tooltip__nutrition__list__item"><span>Carbs:</span> <%=breakfast.nutrition.carbs%>g</li>
+                            <li class="tooltip__nutrition__list__item"><span>Fat:</span> <%=breakfast.nutrition.fat%>g</li>
+                            <li class="tooltip__nutrition__list__item"><span>Protein:</span> <%=breakfast.nutrition.protein%>g</li>
+                        </ul>
+                        <hr>
+                        <p class="tooltip__nutrition">Ingredients: </p>
+                        <ul class="tooltip__ingredient__list">
+                          <% var breakIngObj = breakfast.ingredients; %>
+                          <% Object.keys(breakIngObj).forEach(function(key) { %>
+                              <% var ingKey = breakIngObj[key]; %>
+                              <% var ingKeyName = ingKey.name; %>
+                              <% if (ingKeyName !== undefined) { %>
+                                <li class="tooltip__ingredient__list__item"><%=ingKey.amount%> <%=ingKey.unit%> <%=ingKey.name%></li>
+                              <% } %>
+                          <% }) %>
+                        </ul>
+                    </div>
+
+                    <div id="myModalBreakfast" class="modalBreakfast">
+                      <!-- Modal content -->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                              <span class="closeBreakfast">&times;</span>
+                              <div class="modal-header-flex">
+                                <h2><%=breakfast.name%></h2>
+                                <div class="modal-header-information">
+                                    <p>Time to cook: <%= breakfast.time_to_make %></p>
+                                    <p>Servings: <%= breakfast.nutrition.serving_size %></p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal-body">
+                              <div class="modal-body-ingredients">
+                                <p>Ingredients:</p>
+                                <div class="modal__ingredient__list__container">
+                                <% var breakIngObj = breakfast.ingredients; %>
+                                <% Object.keys(breakIngObj).forEach(function(key) { %>
+                                    <% var ingKey = breakIngObj[key]; %>
+                                    <% var ingKeyName = ingKey.name; %>
+                                    <% if (ingKeyName !== undefined) { %>
+                                      <div class="food__grid__item">
+                                        <div class="food__item__image">
+                                            <img class="food__image" src="<%=ingKey.image%>">
+                                        </div>
+                                        <div class="food__item__info">
+                                            <p class="tooltip__name"><%=ingKey.name%></p>
+                                            <p class="food__info"><%=ingKey.amount%> <%=ingKey.unit%></p>
+                                        </div>
+                                      </div>
+                                    <% } %>
+                                <% }) %>
+                                </div>
+                              </div>
+                              <div class="modal-body-nutrition">
+                                  <p>Nutrition:</p>
+                                  <div class="modal__nutrition">
+                                    <div>
+                                        <ul class="modal__nutrition__list">
+                                            <li class="tooltip__nutrition__list__item"><span>Calories:</span> <%=breakfast.nutrition.calories%></li>
+                                            <li class="tooltip__nutrition__list__item"><span>Carbs:</span> <%=breakfast.nutrition.carbs%>g</li>
+                                            <li class="tooltip__nutrition__list__item"><span>Fat:</span> <%=breakfast.nutrition.fat%>g</li>
+                                            <li class="tooltip__nutrition__list__item"><span>Protein:</span> <%=breakfast.nutrition.protein%>g</li>
+                                        </ul>
+                                        <ul class="modal__nutrition__list">
+                                            <li><span>Fiber:</span> <%=breakfast.nutrition.fiber%>g</li>
+                                            <li><span>Sodium:</span> <%=breakfast.nutrition.sodium%>mg</li>
+                                            <li><span>Cholesterol:</span> <%=breakfast.nutrition.cholesterol%>mg</li>
+                                            <li><span>Sugar:</span> <%=breakfast.nutrition.sugar%>g</li>
+                                        </ul>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="modal__instructions">
+                                <p class="modal__instructions__header">Instructions:</p>
+                                <p class="modal__instructions__instructions"><%=breakfast.instructions%></p>
+                            </div>
+                          </div>
+                    </div>
+
+                    <div class="food__item__image">
+                        <img class="food__image" src="<%=breakfast.image%>">
+                    </div>
+                    <div class="food__item__info">
+                        <p class="breakfast__name"><%=breakfast.name%></p>
+                        <p class="food__info">Servings: <%=breakfast.nutrition.serving_size%></p>
+                    </div>
+                    <div class="food__item__buttons">
+                        <div class="refreshContainer">
+
+                        </div>
+                        <i class="fa fa-info-circle fa-lg myBtnBtnBreakfast infoBtn"></i>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+    <div class="food__lunch">
+        <h4 class="meal__name">Lunch</h4>
+        <p class="meal__calories"><span class="lunchCalSpan">660</span> Calories</p>
+        <div class="lunch__items__container">
+            <% plan.plan[1].forEach(function(lunch) { %>
+                <div class="food__grid__item tooltip">
+
+                    <div class="tooltiptext">
+                        <p class="tooltip__name"><%=lunch.name%></p>
+                        <p class="cook__time">Cook time: <%=lunch.time_to_make%></p>
+                        <hr>
+                        <p class="tooltip__nutrition">Nutrition info: </p>
+                        <ul class="tooltip__nutrition__list">
+                            <li class="tooltip__nutrition__list__item item1"><span>Calories:</span> <span class="currentCal"><%=lunch.nutrition.calories%></span></li>
+                            <li class="tooltip__nutrition__list__item"><span>Carbs:</span> <%=lunch.nutrition.carbs%>g</li>
+                            <li class="tooltip__nutrition__list__item"><span>Fat:</span> <%=lunch.nutrition.fat%>g</li>
+                            <li class="tooltip__nutrition__list__item"><span>Protein:</span> <%=lunch.nutrition.protein%>g</li>
+                        </ul>
+                        <hr>
+                        <p class="tooltip__nutrition">Ingredients: </p>
+                        <ul class="tooltip__ingredient__list">
+                          <% var lunchIngObj = lunch.ingredients; %>
+                          <% Object.keys(lunchIngObj).forEach(function(key) { %>
+                              <% var ingKey = lunchIngObj[key]; %>
+                              <% var ingKeyName = ingKey.name; %>
+                              <% if (ingKeyName !== undefined) { %>
+                                <li class="tooltip__ingredient__list__item"><%=ingKey.amount%> <%=ingKey.unit%> <%=ingKey.name%></li>
+                              <% } %>
+                          <% }) %>
+                        </ul>
+                    </div>
+
+                    <div id="myModalLunch" class="modalLunch">
+
+                          <!-- Modal content -->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                              <span class="closeLunch">&times;</span>
+                              <div class="modal-header-flex">
+                                <h2><%=lunch.name%></h2>
+                                <div class="modal-header-information">
+                                    <p>Time to cook: <%= lunch.time_to_make %></p>
+                                    <p>Servings: <%= lunch.nutrition.serving_size %></p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal-body">
+                              <div class="modal-body-ingredients">
+                                <p>Ingredients:</p>
+                                <div class="modal__ingredient__list__container">
+                                <% var lunchIngObj = lunch.ingredients; %>
+                                <% Object.keys(lunchIngObj).forEach(function(key) { %>
+                                    <% var ingKey = lunchIngObj[key]; %>
+                                    <% var ingKeyName = ingKey.name; %>
+                                    <% if (ingKeyName !== undefined) { %>
+                                      <div class="food__grid__item">
+                                        <div class="food__item__image">
+                                            <img class="food__image" src="<%=ingKey.image%>">
+                                        </div>
+                                        <div class="food__item__info">
+                                            <p class="tooltip__name"><%=ingKey.name%></p>
+                                            <p class="food__info"><%=ingKey.amount%> <%=ingKey.unit%></p>
+                                        </div>
+                                      </div>
+                                    <% } %>
+                                <% }) %>
+                                </div>
+                              </div>
+                              <div class="modal-body-nutrition">
+                                  <p>Nutrition:</p>
+                                  <div class="modal__nutrition">
+                                    <div>
+                                        <ul class="modal__nutrition__list">
+                                            <li class="tooltip__nutrition__list__item"><span>Calories:</span> <%=lunch.nutrition.calories%></li>
+                                            <li class="tooltip__nutrition__list__item"><span>Carbs:</span> <%=lunch.nutrition.carbs%>g</li>
+                                            <li class="tooltip__nutrition__list__item"><span>Fat:</span> <%=lunch.nutrition.fat%>g</li>
+                                            <li class="tooltip__nutrition__list__item"><span>Protein:</span> <%=lunch.nutrition.protein%>g</li>
+                                        </ul>
+                                        <ul class="modal__nutrition__list">
+                                            <li><span>Fiber:</span> <%=lunch.nutrition.fiber%>g</li>
+                                            <li><span>Sodium:</span> <%=lunch.nutrition.sodium%>mg</li>
+                                            <li><span>Cholesterol:</span> <%=lunch.nutrition.cholesterol%>mg</li>
+                                            <li><span>Sugar:</span> <%=lunch.nutrition.sugar%>g</li>
+                                        </ul>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="modal__instructions">
+                                <p class="modal__instructions__header">Instructions:</p>
+                                <p class="modal__instructions__instructions"><%=lunch.instructions%></p>
+                            </div>
+                          </div>
+
+                    </div>
+
+                    <div class="food__item__image">
+                        <img class="food__image" src="<%=lunch.image%>">
+                    </div>
+                    <div class="food__item__info">
+                        <p class="lunch__name"><%=lunch.name%></p>
+                        <p class="food__info">Servings: <%=lunch.nutrition.serving_size%></p>
+                    </div>
+                    <div class="food__item__buttons">
+                        <div class="refreshContainer">
+
+                        </div>
+                        <i class="fa fa-info-circle fa-lg myBtnBtnLunch infoBtn"></i>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+    <div class="food__dinner">
+        <h4 class="meal__name">Dinner</h4>
+        <p class="meal__calories"><span class="dinnerCalSpan">660</span> Calories</p>
+        <div class="dinner__items__container">
+            <% plan.plan[2].forEach(function(dinner) { %>
+
+                    <div class="food__grid__item tooltip">
+
+                        <div class="tooltiptext">
+                        <p class="tooltip__name"><%=dinner.name%></p>
+                        <p class="cook__time">Cook time: <%=dinner.time_to_make%></p>
+                        <hr>
+                        <p class="tooltip__nutrition">Nutrition info: </p>
+                        <ul class="tooltip__nutrition__list">
+                            <li class="tooltip__nutrition__list__item item1"><span>Calories:</span> <span class="currentCal"><%=dinner.nutrition.calories%></span></li>
+                            <li class="tooltip__nutrition__list__item"><span>Carbs:</span> <%=dinner.nutrition.carbs%>g</li>
+                            <li class="tooltip__nutrition__list__item"><span>Fat:</span> <%=dinner.nutrition.fat%>g</li>
+                            <li class="tooltip__nutrition__list__item"><span>Protein:</span> <%=dinner.nutrition.protein%>g</li>
+                        </ul>
+                        <hr>
+                        <p class="tooltip__nutrition">Ingredients: </p>
+                        <ul class="tooltip__ingredient__list">
+                          <% var dinnerIngObj = dinner.ingredients; %>
+                          <% Object.keys(dinnerIngObj).forEach(function(key) { %>
+                              <% var ingKey = dinnerIngObj[key]; %>
+                              <% var ingKeyName = ingKey.name; %>
+                              <% if (ingKeyName !== undefined) { %>
+                                <li class="tooltip__ingredient__list__item"><%=ingKey.amount%> <%=ingKey.unit%> <%=ingKey.name%></li>
+                              <% } %>
+                          <% }) %>
+                        </ul>
+                    </div>
+
+                    <div id="myModalDinner" class="modalDinner">
+                         <!-- Modal content -->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                              <span class="closeDinner">&times;</span>
+                              <div class="modal-header-flex">
+                                <h2><%=dinner.name%></h2>
+                                <div class="modal-header-information">
+                                    <p>Time to cook: <%= dinner.time_to_make %></p>
+                                    <p>Servings: <%= dinner.nutrition.serving_size %></p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal-body">
+                              <div class="modal-body-ingredients">
+                                <p>Ingredients:</p>
+                                <div class="modal__ingredient__list__container">
+                                <% var dinnerIngObj = dinner.ingredients; %>
+                                <% Object.keys(dinnerIngObj).forEach(function(key) { %>
+                                    <% var ingKey = dinnerIngObj[key]; %>
+                                    <% var ingKeyName = ingKey.name; %>
+                                    <% if (ingKeyName !== undefined) { %>
+                                      <div class="food__grid__item">
+                                        <div class="food__item__image">
+                                            <img class="food__image" src="<%=ingKey.image%>">
+                                        </div>
+                                        <div class="food__item__info">
+                                            <p class="tooltip__name"><%=ingKey.name%></p>
+                                            <p class="food__info"><%=ingKey.amount%> <%=ingKey.unit%></p>
+                                        </div>
+                                      </div>
+                                    <% } %>
+                                <% }) %>
+                                </div>
+                              </div>
+                              <div class="modal-body-nutrition">
+                                  <p>Nutrition:</p>
+                                  <div class="modal__nutrition">
+                                    <div>
+                                        <ul class="modal__nutrition__list">
+                                            <li class="tooltip__nutrition__list__item"><span>Calories:</span> <%=dinner.nutrition.calories%></li>
+                                            <li class="tooltip__nutrition__list__item"><span>Carbs:</span> <%=dinner.nutrition.carbs%>g</li>
+                                            <li class="tooltip__nutrition__list__item"><span>Fat:</span> <%=dinner.nutrition.fat%>g</li>
+                                            <li class="tooltip__nutrition__list__item"><span>Protein:</span> <%=dinner.nutrition.protein%>g</li>
+                                        </ul>
+                                        <ul class="modal__nutrition__list">
+                                            <li><span>Fiber:</span> <%=dinner.nutrition.fiber%>g</li>
+                                            <li><span>Sodium:</span> <%=dinner.nutrition.sodium%>mg</li>
+                                            <li><span>Cholesterol:</span> <%=dinner.nutrition.cholesterol%>mg</li>
+                                            <li><span>Sugar:</span> <%=dinner.nutrition.sugar%>g</li>
+                                        </ul>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="modal__instructions">
+                                <p class="modal__instructions__header">Instructions:</p>
+                                <p class="modal__instructions__instructions"><%=dinner.instructions%></p>
+                            </div>
+                          </div>
+                    </div>
+
+
+                    <div class="food__item__image">
+                        <img class="food__image" src="<%=dinner.image%>">
+                    </div>
+                    <div class="food__item__info">
+                        <p class="dinner__name"><%=dinner.name%></p>
+                        <p class="food__info">Servings: <%=dinner.nutrition.serving_size%></p>
+                    </div>
+                    <div class="food__item__buttons">
+                        <div class="refreshContainer">
+
+                        </div>
+                        <i class="fa fa-info-circle fa-lg myBtnBtnDinner infoBtn"></i>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+  </div>
+  <div class="plan__information__metrics">
+    <div id="pieChart"></div>
+    <% if (!currentUser) { %>
+        <div>
+            <div class="information__details__totals">
+                <p class="plan__total__nonlog">Plan Total</p>
+                <div class="totals__container">
+                    <div class="calCarbFat">
+                        <p>Calories</p>
+                        <p style="color: #eba8a8">Carbs</p>
+                        <p style="color: #9e73aa">Fat</p>
+                        <p style="color: #8ac78d">Protein</p>
+                        <p>Fiber</p>
+                        <p>Sodium</p>
+                        <p>Cholesterol</p>
+                    </div>
+                    <div class="calCarbFat__numbers">
+                        <p><%=calorieTotal%></p>
+                        <p style="color: #eba8a8; font-weight: 700;"><%=carbTotal%>g</p>
+                        <p style="color: #9e73aa; font-weight: 700;"><%=fatTotal%>g</p>
+                        <p style="color: #8ac78d; font-weight: 700;"><%=proteinTotal%>g</p>
+                        <p><%=fiberTotal%>g</p>
+                        <p><%=sodiumTotal%>mg</p>
+                        <p><%=cholesterolTotal%>mg</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% } else { %>
+        <div class="information__details">
+            <div class="information__details__totals">
+                <p>Plan Total</p>
+                <div class="totals__container">
+                    <div class="calCarbFat">
+                        <p>Calories</p>
+                        <p style="color: #eba8a8">Carbs</p>
+                        <p style="color: #9e73aa">Fat</p>
+                        <p style="color: #8ac78d">Protein</p>
+                        <p>Fiber</p>
+                        <p>Sodium</p>
+                        <p>Cholesterol</p>
+                    </div>
+                    <div class="calCarbFat__numbers">
+                        <p><%=calorieTotal%></p>
+                        <p style="color: #eba8a8; font-weight: 700;"><%=carbTotal%>g</p>
+                        <p style="color: #9e73aa; font-weight: 700;"><%=fatTotal%>g</p>
+                        <p style="color: #8ac78d; font-weight: 700;"><%=proteinTotal%>g</p>
+                        <p><%=fiberTotal%>g</p>
+                        <p><%=sodiumTotal%>mg</p>
+                        <p><%=cholesterolTotal%>mg</p>
+                    </div>
+                </div>
+            </div>
+            <div class="information__details__targets">
+                <p>Your Targets</p>
+                <div style="display: flex; justify-content: center;">
+                    <div class="targets__container">
+                        <p><%=currentUser.targetCalories%></p>
+                        <p><%=currentUser.targetCarbs%>g</p>
+                        <p><%=currentUser.targetFats%>g</p>
+                        <p><%=currentUser.targetProteins%>g</p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% } %>
+  </div>
+</section>
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/4.7.2/d3.min.js"></script>
+
+<script src="/js/home.js"></script>
+<script src="/js/d3pie.min.js"></script>
+
+<script>
+    var plan = <%- JSON.stringify(plan) %>;
+    var carbs = <%- JSON.stringify(carbTotal) %>;
+    var fats = <%- JSON.stringify(fatTotal) %>;
+    var proteins = <%- JSON.stringify(proteinTotal) %>;
+    var pie = new d3pie("pieChart", {
+        "header": {
+            "title": {
+                "fontSize": 22,
+                "font": "verdana"
+            },
+            "subtitle": {
+                "color": "#999999",
+                "fontSize": 10,
+                "font": "verdana"
+            },
+            "titleSubtitlePadding": 12
+        },
+        "footer": {
+            "color": "#999999",
+            "fontSize": 11,
+            "font": "open sans",
+            "location": "bottom-center"
+        },
+        "size": {
+            "canvasHeight": 300,
+            "canvasWidth": 300,
+            "pieOuterRadius": "93%"
+        },
+        "data": {
+            "sortOrder": "label-asc",
+            "content": [
+                {
+                    "label": "Carbs",
+                    "value": carbs,
+                    "color": "#eba8a8"
+                },
+                {
+                    "label": "Fat",
+                    "value": fats,
+                    "color": "#9e73aa"
+                },
+                {
+                    "label": "Protein",
+                    "value": proteins,
+                    "color": "#8ac78d"
+                }
+            ]
+        },
+        "labels": {
+            "outer": {
+                "format": "none",
+                "pieDistance": 32
+            },
+            "inner": {
+                "format": "label-percentage2",
+                "hideWhenLessThanPercentage": 5
+            },
+            "mainLabel": {
+                "color": "#ffffff",
+                "font": "verdana"
+            },
+            "percentage": {
+                "color": "#e1e1e1",
+                "font": "verdana",
+                "decimalPlaces": 0
+            },
+            "value": {
+                "color": "#e1e1e1",
+                "font": "verdana"
+            },
+            "lines": {
+                "enabled": true,
+                "color": "#cccccc"
+            },
+            "truncation": {
+                "enabled": true
+            }
+        },
+        "effects": {
+            "pullOutSegmentOnClick": {
+                "effect": "linear",
+                "speed": 400,
+                "size": 8
+            }
+        }
+    });
+</script>
+
+<% include partials/footertwo %>

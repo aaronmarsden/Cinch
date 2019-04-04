@@ -1,0 +1,94 @@
+<% include partials/headertwo %>
+
+<div class="head__container">
+    <header class="outside__container">
+        <div class="header__main">
+            <h2 class="header__main__headline">Easy, automatic meal plans for non-cooks.</h2>
+            <p class="header__main__subheadline">Generate personalized meal plans based on your food preferences and calorie count that are easy as fuck to prepare and cook. All recipes under 4 ingredients.</p>
+            <p class="header__main__cta">Create a dead-simple meal plan in seconds</p>
+            <img src="/icons/arrow.png" class="arrow" width="130px" height="130px">
+        </div>
+        <img src="/icons/watercolor/leaf1.png"  class="leafOne" width = "133px" height = "165px">
+        <div class="form__container">
+            <form action="/newrecipe" method="GET">
+            <div class="form__box">
+                <img src="/icons/watercolor/leaf2.png" class="leafTwo" width="133px" height="110px">
+                <div class="diet__container">
+                    <label for="anything">
+                    <div class="diet active_diet">
+                        <input class="check" type="radio" id="anything" name="food" value="anything" checked="checked">
+                        <img src="/icons/watercolor/sandwich.png" class="diet__image" width="58px" height="39px">
+                        <p class="diet__name">Anything</p>
+                    </div>
+                    </label>
+                    <label class="paleo">
+                    <div class="diet">
+                        <input class="check" type="radio" id="paleo" name="food" value="paleo">
+                        <img src="/icons/watercolor/meat.png" class="diet__image" width="47px" height="40px">
+                        <p class="diet__name">Paleo</p>
+                    </div>
+                    </label>
+                    <label class="vegetarian">
+                    <div class="diet">
+                        <input class="check" type="radio" id="vegetarian" name="food" value="vegetarian">
+                        <img src="/icons/watercolor/vegetable.png" class="diet__image" width="40px" height="48px">
+                        <p class="diet__name vegetarian__name">Vegetarian</p>
+                    </div>
+                    </label>
+                    <label for="vegan">
+                    <div class="diet">
+                        <input class="check" type="radio" id="vegan" name="food" value="vegan">
+                        <img src="/icons/watercolor/cabbage.png" class="diet__image" width="59px" height="48px">
+                        <p class="diet__name vegan__name">Vegan</p>
+                    </div>
+                    </label>
+                    <label for="ketogenic">
+                    <div class="diet">
+                        <input class="check" type="radio" id="ketogenic" name="food" value="ketogenic">
+                        <img src="/icons/watercolor/no wheat.png" class="diet__image keto__image" width="31px" height="59px">
+                        <p class="diet__name keto__name">Keto</p>
+                    </div>
+                    </label>
+                    <label for="mediterranean">
+                    <div class="diet">
+                        <input class="check" type="radio" id="mediterranean" name="food" value="mediterranean">
+                        <img src="/icons/watercolor/berry.png" class="diet__image" width="58px" height="52px">
+                        <p class="diet__name med__name">Mediterranean</p>
+                    </div>
+                    </label>
+                </div>
+                <div class="input__box__inputs">
+                    <div class="calorie__input">
+                        <p class="calorie__input__text">I want to eat:</p>
+                        <input name="calorieCount" type="number" placeholder="Calorie count" class="calorie__input__input" required>
+                    </div>
+                    <div class="meal__input">
+                        <p class="meal__input__text">...in</p>
+                        <select name="mealInput" class="meal__input__input">
+                            <option value="1">1 meal</option>
+                            <option value="2">2 meals</option>
+                            <option selected="selected" value="3">3 meals</option>
+                            <option value="4">4 meals</option>
+                            <option value="5">5 meals</option>
+                            <option value="6">6 meals</option>
+                            <option value="7">7 meals</option>
+                            <option value="8">8 meals</option>
+                            <option value="9">9 meals</option>
+                        </select>
+                    </div>
+                    <button class="meal__form__button">Generate Meal Plan</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </header>
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    
+<script src="/js/home.js"></script>
+
+<% include partials/footertwo %>

@@ -1,0 +1,75 @@
+<% include partials/headertwo %>
+
+<header class="profile__container">
+    <h2 class="profile__container__heading">Profile</h2>
+    <div class="profile__box">
+        <div class="profile__box__cover__btn">
+            <button>Upload Cover</button>
+        </div>
+        <div class="profile__box__info">
+            <div class="user__info">
+                <div class="user__info__basics">
+                    <div class="user__picture">
+                        <img src="<%=user.profilePicture%>" width="57px" height="70px">
+                    </div>
+                    <div class="user__name">
+                        <h2 class="user__name__name"><%=user.username%></h2>
+                        <p class="user__name__sentence"><%=user.description%></p>
+                    </div>
+                </div>
+                <div class="user__info__details">
+                    <div class="info__box">
+                        <p>Preferred Diet: <span class="info__box__detail"><%=user.preferredDiet%></span></p>
+                    </div>
+                    <div class="info__box">
+                        <p>Target Cal: <span class="info__box__detail"><%=user.targetCalories%></span></p>
+                    </div>
+                    <div class="info__box">
+                        <p>Cool Level: <span class="info__box__detail">100%</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="user__buttons">
+                <button class="user__buttons__share">Share</button>
+                <img src="/icons/settings.png" width="34px" height="34px" style="cursor: pointer;">
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="plans__container">
+    <div class="saved__plans__header">
+        <button>Saved Plans</button>
+    </div>
+    <div class="saved__plans__container">
+        <% user.mealPlans.forEach(function(plan) { %>
+            <div class="saved__plans__plan">
+                <div class="plan__top" style="background-color: <%=plan.backgroundColor%>">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <div class="plan__image">
+                                <img src="/icons/watercolor/tomato.png" width="40px" height="49px">
+                            </div>
+                        <div class="plan__info">
+                            <div class="plan__info__name__container">
+                                <p class="plan__info__name"><%=plan.name%></p>
+                            </div>
+                            <div class="plan__info__description__container">
+                                <p class="plan__info__description"><%=plan.description%></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="plan__bottom">
+                    <div class="plan__foods">
+                        <p class="plan__foods__item"><%=plan.plan[0][0].name%> | Servings: <%=plan.plan[0][0].nutrition.serving_size%></p>
+                        <p class="plan__foods__item"><%=plan.plan[1][0].name%> | Servings: <%=plan.plan[1][0].nutrition.serving_size%></p>
+                        <p class="plan__foods__item"><%=plan.plan[2][0].name%> | Servings: <%=plan.plan[2][0].nutrition.serving_size%></p>
+                    </div>
+                    <a href="/plan/<%=plan._id%>" class="plan__foods__view">View meal plan -></a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</section>
+
+<% include partials/footertwo %>

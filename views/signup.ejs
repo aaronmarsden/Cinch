@@ -1,0 +1,33 @@
+<% include partials/headertwo %>
+
+<div class="outside">
+    
+    <div class="header__text">
+            <h1>Sign up</h1>
+            <p>Create a username and password to sign up:</p>
+    </div>
+    
+    <div class="signup__form__container">
+        
+        <form action="/signup" method="POST">
+            <div class="form__top">
+                <input type="text" name="username" placeholder="username" required>
+            </div>
+            <div class="form__top">
+                <input type="email" name="email" placeholder="email address" required>
+            </div>
+            <div class="form__bottom">
+                <input type="password" name="password" placeholder="password" required>
+            </div>
+            <div>
+                <input type="checkbox" name="terms" id="terms" required>
+                <label for="terms">I agree to the <a href="#">Terms of Service</a></label>
+            </div>
+            <button class="meal__form__button">Sign Up</button>
+        </form> 
+        
+    </div>
+    
+</div>
+
+<% include partials/footertwo %>

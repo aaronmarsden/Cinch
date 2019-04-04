@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cinch</title>
+        <link rel="stylesheet" href="/newstyles.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    </head>
+    <body>
+
+        <nav class="non_print">
+            <div class="nav__container">
+                <div class="nav__logo">
+                    <h2><a href="/" style="text-decoration:none; color: black;">cinch</a></h4>
+                </div>
+                <div class="nav__links">
+                    <ul class="nav__links__list">
+                        <li class="nav__links__link">How it works</li>
+                        <li class="nav__links__link">About</li>
+                        <li class="nav__links__link">Recipes</li>
+                        <li class="nav__links__link last__item">Add Recipe</li>
+                    </ul>
+                </div>
+                <div class="nav__buttons">
+                    
+                    <% if (!currentUser) { %>
+                    
+                    <button class="nav__buttons__login" onclick="document.location.href='/login';">Log In</button>
+                    <button class="nav__buttons__register" onclick="document.location.href='/signup';">Register</button>
+                    
+                    <% } else { %>
+                    
+                    <div class="logout__container">
+                        <p class="username"><a href="/user/<%=currentUser.username%>" style="text-decoration: none; color: black;"><%= currentUser.username %></a></p>
+                        <a href="/logout" class="logout__button">Log Out</a>
+                    </div>
+                    
+                    <% } %>
+                    
+                </div>
+            </div>
+        </nav>
+        
+        <% if(error && error.length > 0) { %>
+
+            <div class="errorFlashContainer" style="text-align: center; color: red; background-color: #f4d4d3; padding: 2px 0">
+                <p class="errorFlash" style="color:red;"><%= error %></p>
+            </div>
+        
+        
+        <% } %>
+        
+        <% if (success && success.length > 0) { %>
+        
+            <div class="successFlashContainer" style="text-align: center; color: green; background-color: #d6f0d9; padding: 2px 0;">
+                <p class="successFlash"><%= success %></p>
+            </div>
+        
+        <% } %>
+

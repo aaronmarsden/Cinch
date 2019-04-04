@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Food App</title>
+        <link rel="stylesheet" href="/styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    </head>
+    <body>
+
+        <nav class="non_print">
+            <div class="navContainer">
+                <div class="nav_logo">
+                    <p class="nav__brand"><i class="fa fa-carrot fa-lg"></i><a href="/">Food App</a></p>
+                </div>
+                <div class="nav__links">
+                    <ul>
+                        <li class="nav__links__link"><a href="/how-it-works">How it works</a></li>
+                        <li class="nav__links__link"><a href="/about-us">About us</a></li>
+                        <li class="nav__links__link"><a href="/recipes">Recipes</a></li>
+                        <li class="nav__links__link"><a href="/add-recipe">Add Recipe</a></li>
+                    </ul>
+                </div>
+                <div class="nav__user">
+                    <% if (!currentUser) { %>
+                    
+                        <a href="/login" class="loginButton">Login</a>
+                        <a href="/signup" class="signupButton">Sign Up</a>
+                    
+                    <% } else { %>
+                    
+                        <p><%= currentUser.username %></p>
+                        <a href="/logout">Log Out</a>
+                    
+                    <% } %>
+                </div>
+            </div>
+        </nav>
+        
+        <% if(error && error.length > 0) { %>
+        
+            <p class="errorFlash" style="color:red;"><%= error %></p>
+        
+        <% } %>
+        
+        <% if (success && success.length > 0) { %>
+        
+            <p class="successFlash"><%= success %></p>
+        
+        <% } %>
