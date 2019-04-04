@@ -14,6 +14,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "body-parser": "^1.18.3",
     "boom": "^7.3.0",
     "connect-flash-plus": "^0.2.1",
