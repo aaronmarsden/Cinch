@@ -27,7 +27,7 @@ var pp = 0;
 
 //seedDB();
 // mongoose.connect('mongodb://localhost:27017/food_app');
-mongoose.connect('mongodb+srv://aaron:Aaron123@cinch-j4emk.mongodb.net/', {dbName: 'food_app'});
+mongoose.connect('mongodb+srv://aaron:Aaron123@cinch-j4emk.mongodb.net/', {dbName: 'food_app', useNewUrlParser: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
