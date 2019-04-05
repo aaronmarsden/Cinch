@@ -1028,6 +1028,6 @@ function hasCompletedOnboarding(req, res, next) {
     }
 }
 
-app.listen(3000, '127.0.0.1', function(){
-    console.log("Food app server has started");
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
